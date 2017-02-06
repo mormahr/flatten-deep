@@ -6,6 +6,9 @@
   "repository": "https://github.com/mormahr/flatten-deep.git",
   "author": "Moritz Mahringer <me@moritzmahringer.de>",
   "license": "MIT",
+  "engines": {
+    "node": ">=4"
+  },
   "scripts": {
     "build": "babel src -d lib",
     "lint": "eslint index.js src/*",
