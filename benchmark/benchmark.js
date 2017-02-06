@@ -15,11 +15,11 @@ function runTestCase(testCase) {
     const suite = new Suite();
 
     suite.add("flatten-deep", function () {
-        flattenDeep(testCases[0].input)
+        flattenDeep(testCase.input)
     });
 
     suite.add("_.flattenDeep", function () {
-        _.flattenDeep(testCases[0].input)
+        _.flattenDeep(testCase.input)
     });
 
     suite.on('cycle', function(event) {
