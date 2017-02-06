@@ -1,0 +1,9 @@
+{
+  "name": "flatten-deep",
+  "version": "1.0.0",
+  "description": "Deep flatten arrays",
+  "main": "index.js",
+  "repository": "https://github.com/mormahr/flatten-deep.git",
+  "author": "Moritz Mahringer <me@moritzmahringer.de>",
+  "license": "MIT"
+}
