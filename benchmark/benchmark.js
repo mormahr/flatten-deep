@@ -63,7 +63,7 @@ function runTestCase(testCase) {
         console.log('Fastest is ' + this.filter('fastest').map('name'));
     });
 
-    console.log("###################################################################");
     console.log("Test Case:", testCase.description);
     suite.run();
+    console.log("\n\n");
 }
