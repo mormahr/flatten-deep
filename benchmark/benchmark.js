@@ -1,11 +1,35 @@
 const Suite = require("benchmark").Suite;
 const flattenDeep = require("../lib/flattenDeep");
 const _ = require("lodash");
+const Random = require("random-js");
+const random = new Random(Random.engines.mt19937().autoSeed());
+
+function generateIntArray(length, depthThreshold) {
+    const arr = [];
+    for (let i = 0; i < length; i++) {
+        if (random.realZeroToOneInclusive() < depthThreshold) {
+            arr.push(random.integer(0, 100000));
+        } else {
+            const n = random.integer(0, length);
+            arr.push(generateIntArray(n));
+            i += n;
+        }
+    }
+    return arr;
+}
 
 const testCases = [
     {
         description: "multiple types, deep, short",
         input: [10, 5, [30], ["a", ["b", ["c"], "d"], 5, true, [false, false, true]]]
+    },
+    {
+        description: "integers, very deep, long",
+        input: generateIntArray(1000, 0.5)
+    },
+    {
+        description: "integers, deep, very long",
+        input: generateIntArray(10000, 0.1)
     }
 ];
 

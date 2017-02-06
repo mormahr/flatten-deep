@@ -26,6 +26,7 @@
     "flow-bin": "^0.38.0",
     "jest": "^18.1.0",
     "lodash": "^4.17.4",
-    "microtime": "^2.1.2"
+    "microtime": "^2.1.2",
+    "random-js": "^1.0.8"
   }
 }
