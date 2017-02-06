@@ -4,3 +4,4 @@
 .travis.yml
 
 src
+lib/__test__
