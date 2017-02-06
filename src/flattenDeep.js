@@ -1,5 +1,3 @@
-"use strict";
-
 module.exports = function flattenDeep(array) {
     var result = [];
     var nodes = array.slice();
