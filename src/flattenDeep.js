@@ -1,4 +1,5 @@
-module.exports = function flattenDeep(array) {
+// @flow
+module.exports = function flattenDeep(array: mixed[]) {
     var result = [];
     var nodes = array.slice();
     var node;
