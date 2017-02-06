@@ -1,6 +1,6 @@
 {
   "name": "flatten-deep",
-  "version": "1.0.0",
+  "version": "1.0.0-alpha.1",
   "description": "Deep flatten arrays",
   "main": "index.js",
   "repository": "https://github.com/mormahr/flatten-deep.git",
