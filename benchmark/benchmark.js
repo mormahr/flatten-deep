@@ -4,11 +4,11 @@ const _ = require("lodash");
 const Random = require("random-js");
 const random = new Random(Random.engines.mt19937().autoSeed());
 
-function generateIntArray(length, depthThreshold) {
+function generateIntArray(length, depthThreshold, typeGen) {
     const arr = [];
     for (let i = 0; i < length; i++) {
         if (random.realZeroToOneInclusive() < depthThreshold) {
-            arr.push(random.integer(0, 100000));
+            arr.push(typeGen());
         } else {
             const n = random.integer(0, length);
             arr.push(generateIntArray(n));
@@ -25,11 +25,11 @@ const testCases = [
     },
     {
         description: "integers, very deep, long",
-        input: generateIntArray(1000, 0.5)
+        input: generateIntArray(1000, 0.5, function () {return random.integer(0, 100000)})
     },
     {
         description: "integers, deep, very long",
-        input: generateIntArray(10000, 0.1)
+        input: generateIntArray(10000, 0.1, function () {return random.integer(0, 100000)})
     }
 ];
 
