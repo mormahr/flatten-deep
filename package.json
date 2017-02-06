@@ -7,7 +7,7 @@
   "author": "Moritz Mahringer <me@moritzmahringer.de>",
   "license": "MIT",
   "scripts": {
-    "test": "eslint index.js"
+    "test": "eslint index.js lib/*"
   },
   "devDependencies": {
     "eslint": "^3.15.0"
