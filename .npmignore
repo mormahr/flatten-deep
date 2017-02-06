@@ -1,5 +1,6 @@
 .flowconfig
 .eslintrc
 .babelrc
+.travis.yml
 
 src
