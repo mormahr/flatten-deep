@@ -24,6 +24,14 @@ module.exports = function flattenDeep(array: mixed[]) {
         }
     } while (nodes.length && (node = nodes.pop()) !== undefined);
 
-    result.reverse();
+    let tmp;
+    let i = -1;
+    const upper = result.length / 2;
+    const length = result.length;
+    while (++i < upper) {
+        tmp = result[i];
+        result[i] = result[length - i - 1];
+        result[length - i - 1] = tmp;
+    }
     return result;
 };
