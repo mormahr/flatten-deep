@@ -11,7 +11,7 @@
   },
   "scripts": {
     "build": "babel src -d lib",
-    "lint": "eslint index.js src/*",
+    "lint": "eslint index.js src/* benchmark/*",
     "flow": "flow",
     "jest": "jest src/*",
     "test": "yarn run lint && yarn run build && yarn run flow && yarn run jest"
