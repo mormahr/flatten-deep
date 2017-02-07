@@ -5,3 +5,5 @@
 
 src
 lib/__test__
+benchmark
+playground.js
