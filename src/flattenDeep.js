@@ -12,6 +12,7 @@ module.exports = function flattenDeep(array: mixed[]) {
 
     do {
         if (node instanceof Array) {
+            // Begin custom array push
             let index = -1;
             const length = node.length;
             const offset = nodes.length;
@@ -19,11 +20,14 @@ module.exports = function flattenDeep(array: mixed[]) {
             while (++index < length) {
                 nodes[offset + index] = node[index];
             }
+            // End push
         } else {
+            // Custom array push
             result[result.length] = node;
         }
     } while (nodes.length && (node = nodes.pop()) !== undefined);
 
+    // Begin custom array reverse
     let tmp;
     let i = -1;
     const upper = result.length / 2;
@@ -33,5 +37,7 @@ module.exports = function flattenDeep(array: mixed[]) {
         result[i] = result[length - i - 1];
         result[length - i - 1] = tmp;
     }
+    // End reverse
+
     return result;
 };
