@@ -32,6 +32,10 @@ const testCases = [
         input: generateIntArray(10000, 0.1, function () {return random.integer(0, 100000)})
     },
     {
+        description: "integers, shallow, very long",
+        input: generateIntArray(10000, 0.01, function () {return random.integer(0, 100000)})
+    },
+    {
         description: "multiple types, deep, very long",
         input: generateIntArray(10000, 0.1, function () {
             if (random.bool()) {
