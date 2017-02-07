@@ -12,9 +12,10 @@ module.exports = function flattenDeep(array: mixed[]) {
 
     do {
         if (node instanceof Array) {
-            let index = -1,
-                length = node.length,
-                offset = nodes.length;
+            let index = -1;
+            const length = node.length;
+            const offset = nodes.length;
+
             while (++index < length) {
                 nodes[offset + index] = node[index];
             }
