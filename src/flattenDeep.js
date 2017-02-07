@@ -12,9 +12,14 @@ module.exports = function flattenDeep(array: mixed[]) {
 
     do {
         if (node instanceof Array) {
-            nodes.push.apply(nodes, node);
+            let index = -1,
+                length = node.length,
+                offset = nodes.length;
+            while (++index < length) {
+                nodes[offset + index] = node[index];
+            }
         } else {
-            result.push(node);
+            result[result.length] = node;
         }
     } while (nodes.length && (node = nodes.pop()) !== undefined);
 
